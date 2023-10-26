@@ -1,0 +1,34 @@
+<div class="dashboard">
+    
+    <!-- Catégorie de produits (ajoutez vos boutons de filtrage ici) -->
+    <div class="filter">
+        <button (click)="filterProducts(-2)">Tous</button>
+        <button (click)="filterProducts(0)">Poisson</button>
+        <button (click)="filterProducts(1)">Fruits de mer</button>
+        <button (click)="filterProducts(2)">Crustacés</button>
+        <button (click)="filterProducts(-1)">Promotion</button>
+        
+    </div>
+    
+    <!-- Tableau pour afficher les produits -->
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Prix</th>
+            <th>Prix en Promotion</th>
+            <th>Pourcentage de Promotion</th>
+            <th>Quantité en Stock</th>
+            <th>Nombre d'Articles Vendus</th>
+            <th>Commentaires</th>
+        </tr>
+        <tr *ngFor="let produit of produits">
+            <td>{{ produit.name }}</td>
+            <td>{{ produit.price }}</td>
+            <td>{{ produit.price_on_sale || '-' }}</td>
+            <td>{{ produit.reductionPercentage || '-' }}</td>
+            <td>{{ produit.quantity_stock }}</td>
+            <td>{{ produit.quantity_sold }}</td>
+            <td>{{ produit.comments || '-' }}</td>
+        </tr>
+    </table>
+</div>

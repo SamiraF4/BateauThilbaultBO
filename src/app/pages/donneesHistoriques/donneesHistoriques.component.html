@@ -1,0 +1,83 @@
+  <div class="page-container">
+    <h2>Données à Historique</h2>
+  
+    <table class="stock-operations">
+      <caption>Ajout/Retrait de Stock</caption>
+      <tr>
+        <th>Nom du Produit</th>
+        <th>Opération</th>
+        <th>Quantité</th>
+        <th>Prix</th>
+        <th>Prix d'Achat (ajout)</th>
+        <th>Prix de Vente (retrait-par-vente)</th>
+        <th>Chiffre d'Affaires (retrait-par-vente)</th>
+        <th>Chiffre d'Affaires Annuel</th>
+        <th>Ajouter</th>
+      </tr>
+      <tr *ngFor="let produit of listeProduits" class="product-row">
+        <td>{{ produit.name }}</td>
+        <td>
+          <select [(ngModel)]="selectedOperation">
+            <option value="ajout">Ajout</option>
+            <option value="retrait-par-vente">Retrait par Vente</option>
+            <option value="retrait-par-invendus">Retrait par Invendus</option>
+          </select>
+        </td>
+        <td><input type="number" [(ngModel)]="quantity" placeholder="Quantité"></td>
+        <td><input type="number" [(ngModel)]="price" placeholder="Prix"></td>
+        <td>
+          <input *ngIf="selectedOperation === 'ajout'" type="number" [(ngModel)]="prixAchat" placeholder="Prix d'Achat">
+        </td>
+        <td>
+          <input *ngIf="selectedOperation === 'retrait-par-vente'" type="number" [(ngModel)]="prixVente" placeholder="Prix de Vente">
+        </td>
+        <td>
+          <input *ngIf="selectedOperation === 'retrait-par-vente'" type="number" [(ngModel)]="chiffreAffaires" placeholder="Chiffre d'Affaires">
+        </td>
+        <td>
+          <input *ngIf="selectedOperation === 'retrait-par-vente'" type="number" [(ngModel)]="chiffreAffairesAnnuel" placeholder="Chiffre d'Affaires Annuel">
+        </td>
+        <td><button (click)="addStockOperation()">Ajouter</button></td>
+      </tr>
+    </table>
+
+
+  <table class="stock-operation-list">
+    <caption>Liste des Opérations</caption>
+    <tr>
+      <th>Opération</th>
+      <th>Quantité</th>
+      <th>Prix</th>
+    </tr>
+    <tr *ngFor="let operation of stockOperations" class="operation">
+      <td>{{ operation.operationType }}</td>
+      <td>{{ operation.quantity }}</td>
+      <td>{{ operation.price }}</td>
+    </tr>
+  </table>
+
+  <table class="chiffre-affaires">
+    <caption>Chiffre d'Affaires</caption>
+    <tr>
+      <th>Chiffre d'Affaires Annuel</th>
+      <td><button (click)="calculateChiffreAffaires()">Calculer</button></td>
+    </tr>
+    <tr>
+      <td colspan="2">Chiffre d'Affaires Annuel : {{ chiffreAffairesAnnuel }}</td>
+    </tr>
+  </table>
+
+  <table class="resultat-comptable">
+    <caption>Résultat Comptable et Impôt</caption>
+    <tr>
+      <th>Résultat Comptable Annuel</th>
+      <th>Impôt sur les Sociétés Annuel</th>
+      <td><button (click)="calculateResultatComptable()">Calculer</button></td>
+    </tr>
+    <tr>
+      <td>{{ resultatComptableAnnuel }}</td>
+      <td>{{ impotSurSocietesAnnuel }}</td>
+    </tr>
+  </table>
+
+</div>

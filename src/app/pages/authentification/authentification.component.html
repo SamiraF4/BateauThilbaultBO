@@ -1,0 +1,42 @@
+<div class="auth-container">
+    <h2>Authentification</h2>
+    <!-- Formulaire de connexion -->
+    <form *ngIf="loginMode">
+      <div class="form-group">
+        <label for="loginUsername">Nom d'utilisateur</label>
+        <input type="text" id="loginUsername" name="loginUsername" [(ngModel)]="loginUsername" required>
+      </div>
+      <div class="form-group">
+        <label for="loginPassword">Mot de passe</label>
+        <input type="password" id="loginPassword" name="loginPassword" [(ngModel)]="loginPassword" required>
+      </div>
+      <button type="submit" (click)="login()">Se connecter</button>
+    </form>
+  
+    <!-- Formulaire d'inscription -->
+    <form *ngIf="!loginMode">
+      <div class="form-group">
+        <label for="registerUsername">Nom d'utilisateur</label>
+        <input type="text" id="registerUsername" name="registerUsername" [(ngModel)]="registerUsername" required>
+      </div>
+      <div class="form-group">
+        <label for="registerEmail">Adresse e-mail</label>
+        <input type="email" id="registerEmail" name="registerEmail" [(ngModel)]="registerEmail" required>
+      </div>
+      <div class="form-group">
+        <label for="registerPassword">Mot de passe</label>
+        <input type="password" id="registerPassword" name="registerPassword" [(ngModel)]="registerPassword" required>
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirmer le mot de passe</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword" required>
+      </div>
+      <button type="submit" (click)="register()">S'inscrire</button>
+    </form>
+  
+    <!-- Liens pour basculer entre connexion et inscription -->
+    <div class="auth-link">
+      <a (click)="toggleLoginMode()">{{ loginMode ? "S'inscrire" : "Se connecter" }}</a>
+    </div>
+  </div>
+  

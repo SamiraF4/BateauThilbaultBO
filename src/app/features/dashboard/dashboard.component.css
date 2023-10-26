@@ -1,0 +1,46 @@
+/* dashboard.component.css */
+
+.dashboard {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  .filter {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 10px; /* Coins légèrement arrondis */
+  }
+  
+  .filter button {
+    padding: 5px 20px; /* Uniformisation de la taille des boutons */
+    margin: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px; /* Coins légèrement arrondis */
+    cursor: pointer;
+  }
+  
+  .filter button:hover {
+    background-color: #0056b3;
+  }
+  

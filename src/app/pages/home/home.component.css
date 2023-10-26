@@ -1,0 +1,10 @@
+/* Ajoutez ces styles CSS pour centrer le h1 */
+.welcome-section {
+    text-align: center; /* Centre le contenu horizontalement */
+    padding: 20px; /* Facultatif : ajoute de l'espacement autour du contenu */
+  }
+  
+  .welcome-section h1 {
+    font-size: 24px; /* Facultatif : ajustez la taille de la police selon vos préférences */
+  }
+  

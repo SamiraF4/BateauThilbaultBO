@@ -1,0 +1,49 @@
+<section class="product-details">
+  <h1>Détails Produits</h1>
+  <ng-container *ngFor="let type of sortKeyList">
+    <div class="product-type">
+      <h2>{{ type }}</h2> 
+      <table class="product-table">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Prix</th>
+            <th>Prix avec Réduction</th>
+            <th>% de Réduction</th>
+            <th>Stock</th>
+            <th>Vendus</th>
+            <th>Commentaire</th>
+            <th>Modifier le Stock</th>
+            <th>Enregistrer</th>
+            <th>Envoyer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let produit of sortListeProduits[type]" class="product-row">
+            <td>{{ produit.name }}</td>
+            <td>{{ produit.price }}</td>
+            <td>{{ getDiscountPrice(produit.price, produit.discount) }}</td>
+            <td>
+              <input class="discount-input" type="number" [(ngModel)]="produit.discount">
+            </td>
+            <td>{{ produit.quantity_stock }}</td>
+            <td>{{ produit.quantity_sold }}</td>
+            <td>{{ produit.comments }}</td>
+            <td>
+              <input class="stock-input" type="number" [(ngModel)]="produit.quantity_stock">
+            </td>
+            <td>
+              <button class="save-button" (click)="saveProductChange(produit.id)">Enregistrer</button>
+            </td>
+            <td>
+              <button class="send-button" (click)="sendReductionPercentage(produit)">Envoyer</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </ng-container>
+</section>
+<div class="center-button">
+  <button class="send-all-button center" (click)="sendAllProductChanges()">Envoyer les Données</button>
+</div>

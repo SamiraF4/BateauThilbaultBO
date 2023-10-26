@@ -16,6 +16,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DonneesHistoriquesComponent } from './pages/donneesHistoriques/donneesHistoriques.component';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { AuthentificationComponent } from './pages/authentification/authentification.component';
+import { DashboardCaComponent } from './features/dashboardCa/dashboardCa.component';
+import { DashboardCIComponent } from './features/dashboardCi/dashboardCi.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
+
+
 
 
 
@@ -28,14 +34,18 @@ import { AuthentificationComponent } from './pages/authentification/authentifica
     DetailsProduitsComponent,
     DonneesHistoriquesComponent,
     DashboardComponent,
-    AuthentificationComponent
+    AuthentificationComponent,
+    DashboardCaComponent,
+    DashboardCIComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    FormsModule,
+    FormsModule,  
+    NgxChartsModule,
   ],
   providers: [HttpClient, ProductsService],
   bootstrap: [AppComponent]

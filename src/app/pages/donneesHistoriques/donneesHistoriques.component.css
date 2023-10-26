@@ -61,4 +61,8 @@
   .alert {
     background-color: #ffcccc;
   }
+  /* Styles CSS pour centrer le titre h2 */
+.page-container h2 {
+    text-align: center; /* Centre le texte horizontalement */
+  }
   

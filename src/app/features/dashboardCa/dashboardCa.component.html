@@ -1,0 +1,23 @@
+<!-- dashboardCa.component.html -->
+
+<div class="dashboardCA">
+    <h2>Chiffre d'Affaires</h2>
+  
+    <!-- Graphique Linéaire pour le Chiffre d'Affaires -->
+    <div class="chart-container">
+      <canvas id="chiffreAffairesChart"></canvas>
+    </div>
+  
+    <!-- Filtrer par Catégorie -->
+    <div class="category-filter">
+      <label for="categorySelect">Filtrer par Catégorie :</label>
+      <select id="categorySelect" [(ngModel)]="selectedCategory">
+        <option value="annuel">Annuel</option>
+        <option value="mensuel">Mensuel</option>
+        <option value="trimestriel">Trimestriel</option>
+        <!-- Ajoutez d'autres options pour les catégories ici -->
+      </select>
+    </div>
+  </div>
+  
+  

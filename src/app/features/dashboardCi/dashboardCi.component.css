@@ -1,0 +1,79 @@
+/* dashboardCi.component.css */
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .card {
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .chart-wrapper {
+    text-align: center;
+  }
+  
+  /* Styles pour le graphique */
+  ngx-charts-bar-vertical {
+    width: 100%;
+    height: 300px;
+  }
+  
+  /* Styles pour les paragraphes d'informations financières */
+  .card-body p {
+    margin: 10px 0;
+  }
+  
+  /* Styles pour les éléments du graphique */
+  ngx-charts-bar-vertical {
+    width: 100%;
+    height: 300px;
+  }
+  
+  /* Styles pour les éléments du graphique */
+  ngx-charts-bar-vertical {
+    width: 100%;
+    height: 300px;
+  }
+  
+  /* Styles pour les éléments du graphique */
+  ngx-charts-bar-vertical {
+    width: 100%;
+    height: 300px;
+  }
+  
+  /* Styles pour les éléments du graphique */
+  ngx-charts-bar-vertical {
+    width: 100%;
+    height: 300px;
+  }
+  
+  /* Styles CSS pour centrer le contenu de la classe header-content */
+.header-content {
+    text-align: center !important; /* Centre le texte horizontalement et donne la priorité */
+  }
+
+  
+  
+  
+  /* Styles CSS pour centrer le titre h2 */
+.container h2 {
+    text-align: center; /* Centre le texte horizontalement */
+  }
+  
+  

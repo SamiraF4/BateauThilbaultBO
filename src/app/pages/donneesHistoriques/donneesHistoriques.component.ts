@@ -70,4 +70,3 @@ export class DonneesHistoriquesComponent implements OnInit {
     product.discount = this.reductionPercentageInput;
   }
 }
-

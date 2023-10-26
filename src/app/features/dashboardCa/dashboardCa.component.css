@@ -1,0 +1,38 @@
+/* dashboardCa.component.css */
+
+.dashboardCA {
+    max-width: 800px; /* Ajustez la largeur selon vos besoins */
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .dashboardCA h2 {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+  
+  .chart-container {
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .category-filter {
+    margin: 10px 0;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  #categorySelect {
+    padding: 8px;
+  }
+  
+  /* Ajoutez d'autres styles spécifiques au besoin */
+  

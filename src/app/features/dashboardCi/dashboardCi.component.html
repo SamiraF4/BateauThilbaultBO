@@ -1,0 +1,41 @@
+<div class="container">
+    <h2>Résultat Comptable et l’Impôt sur les Sociétés</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Statistiques financières
+          </div>
+          <div class="card-body">
+            <div class="chart-wrapper">
+                <ngx-charts-bar-vertical
+                    [results]="single"
+                    [gradient]="isDoughnut"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="xAxisLabel"
+                    [yAxisLabel]="yAxisLabel"
+                    >
+                </ngx-charts-bar-vertical>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Informations financières
+          </div>
+          <div class="card-body">
+            <p>Bénéfice: {{ single[1].value - single[0].value }} EUR</p>
+            <p>Impôt sur les sociétés: {{ (single[1].value - single[0].value) * 0.3 }} EUR</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -23,13 +23,13 @@ export class AuthentificationComponent {
     this.loginMode = !this.loginMode;
   }
 
-  // Fonner une action de connexion
+  // Donner une action de connexion
   login() {
-    // Implémentez ici la logique de connexion
+    // Implémentez la logique de connexion
   }
 
   // Fonction pour effectuer une action d'inscription
   register() {
-    // Implémentez ici la logique d'inscription
+    // Implémentez la logique d'inscription
   }
 }

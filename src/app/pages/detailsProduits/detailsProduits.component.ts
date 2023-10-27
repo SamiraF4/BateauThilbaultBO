@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Produit } from '../../shared/produit';
 import { ProductsService } from '../../services/products.service';
-import {
-  HttpClient,
-  HttpEvent,
-  HttpParams,
-  HttpResponse,
-} from '@angular/common/http';
 
 @Component({
   selector: 'app-details-produits',
@@ -19,7 +13,7 @@ export class DetailsProduitsComponent implements OnInit {
   sortKeyList: string[] = [];
   reductionPercentageInput: number = 0;
 
-  constructor(private productsService: ProductsService, private http: HttpClient) {}
+  constructor(private productsService: ProductsService) {}
 
   ngOnInit(): void {
     this.getProducts();
@@ -72,22 +66,6 @@ export class DetailsProduitsComponent implements OnInit {
   // Méthode pour envoyer la modification du pourcentage de réduction
   sendReductionPercentage(product: Produit): void {
     product.discount = this.reductionPercentageInput;
-    console.log("testing")
-    console.log(this.http.post<any>('http://localhost:8000/save_product', {
-    'nom': product.name,
-    'prix': product.price,
-    'prix_avec_reduction': product.price_on_sale,
-    'pourcentage_reduction': product.discount,
-    'vente': product.quantity_sold,
-    'stock': product.quantity_stock,
-    'commentaire': product.comments,
-    },
-    {
-        headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'http://localhost:8000',
-      }
-    }).subscribe())
   }
 
   // Méthode pour envoyer toutes les modifications au backend (à implémenter)

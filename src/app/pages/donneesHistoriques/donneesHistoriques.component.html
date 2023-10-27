@@ -38,7 +38,7 @@
       <td>
         <input *ngIf="selectedOperation === 'retrait-par-vente'" type="number" [(ngModel)]="chiffreAffairesAnnuel" placeholder="Chiffre d'Affaires Annuel">
       </td>
-      <td><button (click)="addStockOperation()">Ajouter</button></td>
+      <td><button (click)="addStockOperation(productId, quantity, 'ajout')">Ajouter</button></td>
     </tr>
   </table>
 </table>

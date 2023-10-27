@@ -12,6 +12,7 @@ export class DonneesHistoriquesComponent implements OnInit {
   selectedOperation: string = ''; // Ajout, retrait-par-vente, retrait-par-invendus
   prixAchat: number = 0;
   prixVente: number = 0;
+  productId: number = 0;
   quantity: number = 0; // Ajout de la quantité
   price: number = 0; // Ajout du prix
   chiffreAffaires: number = 0;
@@ -53,17 +54,37 @@ export class DonneesHistoriquesComponent implements OnInit {
 
   }
 
-  addStockOperation(): void {
-    // Logique pour ajouter une opération de stock
+  addStockOperation(productId: number, quantity: number, operationType: string): void {
+    if (operationType === 'ajout') {
+      // Ajoutez la quantité au stock du produit avec l'ID 'productId'
+    } else if (operationType === 'retrait') {
+      // Retirez la quantité du stock du produit avec l'ID 'productId'
+    }
+    // Assurez-vous de mettre à jour les données dans votre application ou base de données.
   }
+  
 
-  calculateChiffreAffaires(): void {
-    // Logique pour calculer le chiffre d'affaires
+  calculateChiffreAffaires(period: string): number {
+    let totalSales = 0;
+    // Récupérez les ventes pour la période spécifiée (par exemple, ventes mensuelles)
+    // Calculez le chiffre d'affaires en multipliant la quantité vendue par le prix du produit pour chaque vente
+    // Ajoutez les montants de toutes les ventes
+    return totalSales;
   }
+  
 
-  calculateResultatComptable(): void {
-    // Logique pour calculer le résultat comptable
+  calculateResultatComptable(): number {
+    let totalRevenue = 0;
+    let totalCostOfGoodsSold = 0;
+    let otherExpenses = 0;
+    let otherIncome = 0;
+  
+    // Calculez les revenus totaux, les coûts des ventes et les autres dépenses et revenus
+  
+    const resultatComptable = totalRevenue - totalCostOfGoodsSold - otherExpenses + otherIncome;
+    return resultatComptable;
   }
+  
 
   sendReductionPercentage(product: Produit): void {
     product.discount = this.reductionPercentageInput;

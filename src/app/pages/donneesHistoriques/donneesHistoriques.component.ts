@@ -19,7 +19,7 @@ export class DonneesHistoriquesComponent implements OnInit {
   resultatComptableAnnuel: number = 0;
   impotSurSocietesAnnuel: number = 0;
   reductionPercentageInput: number = 0; // Ajout de la propriété reductionPercentageInput
-  stockOperations: any[] = []; // Assurez-vous de définir le type correct
+  stockOperations: any[] = []; 
 
   constructor(private productsService: ProductsService) {}
 
@@ -51,7 +51,6 @@ export class DonneesHistoriquesComponent implements OnInit {
 
     const sortKeyList = Object.keys(sortListeProduits);
 
-    // Assurez-vous que sortListeProduits et sortKeyList existent dans votre modèle de données.
   }
 
   addStockOperation(): void {
